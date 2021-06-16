@@ -4,21 +4,21 @@
 #6/15/21
 #Bash Recompiler
 
-#Print original bash version
-original=`bash --version | awk 'NR==1{print $1, $2, $3, $4, $5}'`
-echo "[+] Original Bash Version: $original [+]"
-sleep 2
-
 #Handle user supplied arguments
 while getopts v: flag
 do
 	case "${flag}" in
 		v) version=${OPTARG};;
 		*) echo "You have supplied an invalid option"
-		   echo "Syntax: ./recompile.sh -v <version> -q <yes/no>"
+		   echo "Syntax: ./recompile.sh -v <version>"
 	           exit 1
 	esac
 done 
+
+#Print original bash version
+original=`bash --version | awk 'NR==1{print $1, $2, $3, $4, $5}'`
+echo "[+] Original Bash Version: $original [+]"
+sleep 2
 
 #Crude detection of package manager
 echo "[+] Grabbing Necessary Dependencies [+]"
