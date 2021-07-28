@@ -3,3 +3,5 @@ A simple bash script that pulls a requested version of Bash and compiles it with
 
 Syntax: 
 ./recompile.sh -v <"version">
+
+The -v version argument must be a valid version of Bash, as found at https://ftp.gnu.org/gnu/bash/ 
